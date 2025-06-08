@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clayton & Elizandra 💘</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #ffe6ec, #ffd1dc);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .top-image {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      border-bottom: 5px solid #e91e63;
+    }
+
+    .card {
+      background: white;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      max-width: 600px;
+    }
+
+    h1 {
+      color: #e91e63;
+      font-size: 2.2em;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    button {
+      margin-top: 20px;
+      background: #e91e63;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #c2185b;
+    }
+
+    iframe {
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Imagem do casal -->
+  <img src="foto.jpg" alt="Clayton e Elizandra" class="top-image" />
+
+  <div class="card">
+    <h1>Feliz Dia dos Namorados 💘</h1>
+    <p class="message">Clique no botão abaixo para ver a surpresa!</p>
+    <button onclick="mostrarMensagem()">Ver mensagem 💌</button>
+
+    <p id="mensagemEscondida" style="display:none; margin-top: 20px;"></p>
+
+    <!-- Música do Spotify -->
+    <iframe id="musicaSpotify" style="display:none;" src="https://open.spotify.com/embed/track/3eHeTsX6W9iIEfn8l2xrWO?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+
+  <script>
+    function diasDesde(dataString) {
+      const hoje = new Date();
+      const inicio = new Date(dataString);
+      const diferencaMs = hoje - inicio;
+      const dias = Math.floor(diferencaMs / (1000 * 60 * 60 * 24));
+      return dias;
+    }
+
+    function mostrarMensagem() {
+      const msg = document.getElementById("mensagemEscondida");
+      const music = document.getElementById("musicaSpotify");
+      const dias = diasDesde("2024-10-14");
+
+      msg.innerHTML = `
+        Eu te amo. Desculpa não conseguir comprar algo para você. 💌<br><br>
+        Eu sei que você merece o máximo, mas decidi fazer algo diferente.<br>
+        <strong>Feliz Dia dos Namorados, paixão!</strong><br><br>
+        Saiba que você é o melhor namorado: lindo, carinhoso, dedicado e bem-humorado. 🥰<br><br>
+        Estamos juntos há <strong>${dias} dias</strong> e cada dia é mais especial! ❤️
+      `;
+      msg.style.display = "block";
+      music.style.display = "block";
+    }
+  </script>
+</body>
+</html>
